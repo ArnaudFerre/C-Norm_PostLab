@@ -18,6 +18,9 @@ This code is under the Apache License, Version 2.0 (the "License"); you may not 
 **Command lines:**
 
 C-Norm training on tool dataset:
+`C:\Users\arferre\workspace\C-Norm_PostLab\C-Norm_PostLab>python main_train.py --word-vectors-bin data/VST_count0_size100_iter50.model --ontology data/OntoBiotope_BioNLP-ST-2016.obo --terms data/terms_train.json --attributions data/attributions_train.json --outputModel data/trainedTFmodel/ --epochs 5`
+
+To Erase:
 `python module_train/main_train.py --word-vectors-bin test/DATA/wordEmbeddings/VST_count0_size100_iter50.model --ontology test/DATA/OntoBiotope_BioNLP-ST-2016.obo --terms test/DATA/trainingData/terms_train.json --factor 0.6 --model test/DATA/learnedHyperparameters/CNorm/ --archiName cnorm --epochs 3 --batch 64 --attributions test/DATA/trainingData/attributions_train.json`
 
 C-Norm prediction on tool dataset (on dev set):<br/>
