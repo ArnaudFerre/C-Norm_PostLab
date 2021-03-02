@@ -1,14 +1,17 @@
 **# C-Norm (Concept NORMalization)**
 
 
-The method implemented in this repository enables to reproduce equivalent results than those published in:<br />
+The entity normalization method implemented in this repository is an optimization of the C-Norm method and is implemented on the [PostLab](https://www.postlab.fr/) platform, and is usable with graphical user interface (work in progress).<br />
+<br />
+The initial method is described in the article below:<br />
 C-Norm: a Neural Approach to Few-Shot Entity Normalization<br />
 Arnaud Ferré-1, Louise Deléger-1, Robert Bossy-1, Pierre Zweigenbaum-2, Claire Nédellec-1<br />
 1-Université Paris-Saclay, INRAE MaIAGE, Jouy-en-Josas, France<br />
 2-Université Paris-Saclay, CNRS LIMSI, Orsay, France<br />
-Web link: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03886-8
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Web link: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03886-8<br />
+If you want to reproduce the different experiments described in this article, see rather the initial repository of C-Norm with its sidekick methods: https://github.com/ArnaudFerre/C-Norm/blob/master/README.md<br />
+<br />
+This code is under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 <br />
 
