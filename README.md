@@ -25,11 +25,6 @@ C-Norm prediction on tool dataset (on dev set):<br/>
 
 <br />
 
-**Demo run:**
-You can directly run the two scripts: module_train/main_train.py and the module_predictor/main_predictor.py.
-
-<br />
-
 **Information on parameters:**<br />
 
 For main_train.py:<br />
