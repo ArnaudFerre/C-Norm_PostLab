@@ -33,7 +33,7 @@ For main_train.py, mandatory parameters:<br />
 --terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token21", …, "token2n"], … }`<br />
 --attributions: path to the JSON file with the attributions of concept(s) to each mention for the training. Format: `{"mention_unique_idA":["concept_identifierA1", "concept_identifierA2", …], "mention_unique_idB":["concept_identifierB1"], …}`<br />
 --outputModel: path to a directory where save the training parameters (i.e. Tensorflow model).<br />
-
+<br />
 For main_train.py, optional parameters:<br />
 --phraseMaxSize: Integer. This number set the max tokens taking into account in mentions (default=15).<br />
 --normalizedInputs: True or False. A possible scaling of embeddings. Best results with unit normalization (True value by default).<br />
@@ -42,7 +42,6 @@ For main_train.py, optional parameters:<br />
 --batch: number of training examples seen at the same time by the program (default value=64).<br />
 --filtersSize: list of integers. Each value represents the width of a typ of filter applied in the CNN part of C-Norm (default value=1).<br />
 --filtersNb: list of integers. Must have same number of value than filtersSize. Each value represents the number of filters respectively for each filter type (default value=100, really not optimal, but quick to run).<br />
-
 <br />
 For predict.py, mandatory parameters:<br />
 --word-vectors-bin: path to the embeddings file of tokens, Gensim model (or JSON with --word-ectors option). Use the same embeddings that in your training set.<br />
@@ -50,7 +49,7 @@ For predict.py, mandatory parameters:<br />
 --terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token21", … "token2n"], … }`<br />
 --inputModel: path where is located the Tensorflow model after training.<br />
 --output: filepath where save the predictions. CSV format: `mention_id concept_id	similarity_value`<br />
-
+<br />
 For predict.py, optional parameters:<br />
 --phraseMaxSize: Must be the same value that for the training (default=15).<br />
 --normalizedInputs: Recommended to use the same value than for the training.<br />
