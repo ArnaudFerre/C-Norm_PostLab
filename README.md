@@ -25,25 +25,36 @@ C-Norm prediction on tool dataset (on dev set):<br/>
 
 <br />
 
-**Information on parameters:**<br />
+**Information on possible parameters:**<br />
 
-For main_train.py:<br />
---word-vectors-bin: path to the embeddings file of tokens, Gensim model. If you have no Gensim model, you can load in JSON format with option --word-vectors instead: `{"token1": [value11, …, value1N], "token2": [value21, …, value2N], …}`<br />
+For main_train.py, mandatory parameters:<br />
+--word-vectors-bin: path to the embeddings file of tokens, Gensim model format. If you have no Gensim model, you can load in JSON format with option --word-vectors instead: `{"token1": [value11, …, value1N], "token2": [value21, …, value2N], …}`<br />
 --ontology: path to the ontology file (OBO format, some OWL format) used to normalize mentions (i.e the identifiers of the concepts must be the same used in the attributions file).<br />
---terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token12", … "token1n"], … }`<br />
---factor: value to smooth the concept vectors weights. If factor=0, concept vectors are one-hot encoding. If factor=1, for each concept vector, the weight associated to its parent concept is equal to 1. To reproduce our work, use factor=0,6.<br />
---outputModel: path where save the training parameters (i.e. Tensorflow model).<br />
---epochs: number of time that the program will be train on the same training data. Try different values. In our experiments, best results with a value between 30 and 200.<br />
---batch: number of training examples seen at the same time by the program. Set to 64.<br />
+--terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token21", …, "token2n"], … }`<br />
 --attributions: path to the JSON file with the attributions of concept(s) to each mention for the training. Format: `{"mention_unique_idA":["concept_identifierA1", "concept_identifierA2", …], "mention_unique_idB":["concept_identifierB1"], …}`<br />
+--outputModel: path to a directory where save the training parameters (i.e. Tensorflow model).<br />
+
+For main_train.py, optional parameters:<br />
+--phraseMaxSize: Integer. This number set the max tokens taking into account in mentions (default=15).<br />
+--normalizedInputs: True or False. A possible scaling of embeddings. Best results with unit normalization (True value by default).<br />
+--factor: value to smooth the concept vectors weights. If factor=0, concept vectors are one-hot encoding. If factor=1, for each concept vector, the weight associated to its parent concept is equal to 1. Good value is factor=0,6 (=default value).<br />
+--epochs: number of time that the program will be train on the same training data. Try different values. In our experiments, best results with a value between 30 and 200 (default value=150).<br />
+--batch: number of training examples seen at the same time by the program (default value=64).<br />
+--filtersSize: list of integers. Each value represents the width of a typ of filter applied in the CNN part of C-Norm (default value=1).<br />
+--filtersNb: list of integers. Must have same number of value than filtersSize. Each value represents the number of filters respectively for each filter type (default value=100, really not optimal, but quick to run).<br />
+
 <br />
-For main_predictor.py:<br />
+For predict.py, mandatory parameters:<br />
 --word-vectors-bin: path to the embeddings file of tokens, Gensim model (or JSON with --word-ectors option). Use the same embeddings that in your training set.<br />
 --ontology: path to the ontology file (OBO format, some OWL format) used to normalize mentions. Use the same ontology file that in your training set.<br />
---terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token12", … "token1n"], … }`<br />
---factor: value to smooth the concept vectors weights. Preferentially, use the value that in your training set.<br />
+--terms: path to the JSON file containing the mentions from examples, with their word segmentation. Format: `{"mention_unique_id1": ["token11", "token12", …, "token1m"], "mention_unique_id2": ["token21", … "token2n"], … }`<br />
 --inputModel: path where is located the Tensorflow model after training.<br />
---output: path where save the prediction. CSV format: `mention_id concept_id	similarity_value`<br />
+--output: filepath where save the predictions. CSV format: `mention_id concept_id	similarity_value`<br />
+
+For predict.py, optional parameters:<br />
+--phraseMaxSize: Must be the same value that for the training (default=15).<br />
+--normalizedInputs: Recommended to use the same value than for the training.<br />
+--factor: value to smooth the concept vectors weights. Preferentially, use the value that in your training set.<br />
 
 <br />
 
