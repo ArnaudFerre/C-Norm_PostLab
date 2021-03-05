@@ -199,7 +199,7 @@ class Train(OptionParser):
         self.add_option('--outputModel', action='store', type='string', dest='model', help='path to save the NN model directory')
 
         # Methods hyperparameters:
-        self.add_option('--factor', action='store', type='float', dest='factors', default=0.65, help='parent concept weight factor (default=0.65).')
+        self.add_option('--factor', action='store', type='float', dest='factors', default=0.65, help='parent concept weight factor (default=0.6).')
         self.add_option('--epochs', action='store', type='int', dest='epochs', default=150, help='number of epochs (default=150).')
         self.add_option('--batch', action='store', type='int', dest='batch', default=64, help='number of samples in batch (default=64).')
         self.add_option('--filtersSize', action='append', type='int', dest='filtersSize', help='list of the different size of filters (default=1)')

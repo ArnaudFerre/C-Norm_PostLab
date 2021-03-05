@@ -33,11 +33,12 @@ import json
 import gzip
 
 import numpy
-import gensim
-from sklearn.neighbors import NearestNeighbors
 from scipy.spatial.distance import cosine
-from sklearn.preprocessing import normalize
+import gensim
 from tensorflow.keras import layers, models
+
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import normalize
 
 from train import normalizeEmbedding
 from word2term import getSizeOfVST, getFormOfTerm
@@ -161,9 +162,9 @@ class Predictor(OptionParser):
         self.add_option('--output', action='store', type='string', dest='output', help='file where to write predictions')
 
         self.add_option('--metric', action='store', type='string', dest='metric', default='cosine', help='distance metric to use (default: %default)')
-        self.add_option('--factor', action='store', type='float', dest='factors', default=0.65, help='parent concept weight factor (default=0.65)')
-        self.add_option('--threshold', action='store', type='float', dest='threshold', help='threshold value for SIEVE method, between 0.0 (all S-CNN) and 1.0 (all SLFNN).')
+        self.add_option('--factor', action='store', type='float', dest='factors', default=0.65, help='parent concept weight factor (default=0.6)')
         self.add_option('--normalizedInputs', action='store', type='string', dest='normalizedInputs', default="True", help='unit normalize embeddings if "True" (default: True).')
+        self.add_option('--phraseMaxSize', action='store', type='int', dest='phrase_max_size', default=15, help='max considered size of phrases in inputs (default=15).')
 
 
 
@@ -230,7 +231,7 @@ class Predictor(OptionParser):
 
 
         print("C-Norm predicting...")
-        prediction = CNorm_Predictor(word_vectors, terms, vso, trained_model, options.metric, 15)
+        prediction = CNorm_Predictor(word_vectors, terms, vso, trained_model, options.metric, options.phrase_max_size)
         print("Prediction done.")
 
 

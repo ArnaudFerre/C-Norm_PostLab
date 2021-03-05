@@ -83,7 +83,7 @@ def ontoToVec(onto, factor=1.0):
 
 
 if __name__ == '__main__':
-    ontoPath = "../test/DATA/OntoBiotope_BioNLP-ST-2016.obo"
+    ontoPath = "data/OntoBiotope_BioNLP-ST-2016.obo"
     onto = pronto.Ontology(ontoPath)
     vso_OneHot = ontoToVec(onto, factor=0.0)
 
@@ -93,6 +93,8 @@ if __name__ == '__main__':
         for value in vso_OneHot[concept]:
             serializable_vso_OneHot[concept].append(float(value))
         #print(concept, serializable_vso_OneHot[concept][0:10])
+
+    print(serializable_vso_OneHot)
 
 
     """
