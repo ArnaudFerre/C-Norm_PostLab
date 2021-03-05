@@ -21,7 +21,7 @@ C-Norm training on tool dataset:
 `python train.py --word-vectors-bin data/VST_count0_size100_iter50.model --ontology data/OntoBiotope_BioNLP-ST-2016.obo --terms data/terms_train.json --attributions data/attributions_train.json --outputModel data/trainedTFmodel/ --epochs 5`
 
 C-Norm prediction on tool dataset (on dev set):<br/>
-`>python predict.py --word-vectors-bin data/VST_count0_size100_iter50.model --ontology data/OntoBiotope_BioNLP-ST-2016.obo --terms data/terms_dev.json --inputModel data/trainedTFmodel/ --output data/results/testResults.txt`
+`python predict.py --word-vectors-bin data/VST_count0_size100_iter50.model --ontology data/OntoBiotope_BioNLP-ST-2016.obo --terms data/terms_dev.json --inputModel data/trainedTFmodel/ --output data/results/testResults.txt`
 
 <br />
 
