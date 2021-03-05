@@ -65,6 +65,7 @@ Python libraries:<br />
 --[Pronto](https://pypi.org/project/pronto/): ontology manipulation (OBO, possibly OWL)<br /> 
 --[Gensim](https://radimrehurek.com/gensim/models/word2vec.html): creation/manipulation of word embeddings (optional - JSON equivalent format normally tolerated)<br />
 --[Numpy](https://numpy.org/)<br />
+--[scikit-learn](https://scikit-learn.org/stable/install.html)<br />
 <br />
 External tools (managed by the [AlvisNLP/ML](https://bibliome.github.io/alvisnlp/) suite in the published experiments):<br />
 --Sentence/word segmenter : [SeSMig](https://bibliome.github.io/alvisnlp/reference/module/SeSMig) / [WoSMig](https://bibliome.github.io/alvisnlp/reference/module/WoSMig) <br />
