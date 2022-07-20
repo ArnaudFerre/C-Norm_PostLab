@@ -301,7 +301,7 @@ class Train(OptionParser):
             d = dirname(options.model)
             if not exists(d) and d != '':
                 makedirs(d)
-            model.save(options.model)
+            model.save(options.model, save_format='h5')
             print("Model saved.")
 
 
